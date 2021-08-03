@@ -34,10 +34,10 @@
 
 		lower_layer {
 // ------------------------------------------------------------------------------------------------------------------
-// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6   |  F7   |   F8   |  {   |   }   |    DEL     |
-// |       |     |     |      |      |      |                   |  F11  |  F12  | EQUAL  |  [   |   ]   |    PREV    |
-// |       |     |     |      |      |      |                   | LEFT  | RIGHT |   UP   | DOWN | PG_UP |    NEXT    |
-// |       |     |     |      |      |      |        |  |       |  F9   |  F10  |  HOME  | END  | PG_DN | PLAY_PAUSE |
+// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6   |  F7   |   F8   |  {    |   }   |    DEL     |
+// |       |     |     |      |      |      |                   |  F11  |  F12  | EQUAL  |  [    |   ]   |    PREV    |
+// |       |     |     |      |      |      |                   | LEFT  | DOWN  |   UP   | RIGHT | PG_UP |    NEXT    |
+// |       |     |     |      |      |      |        |  |       |  F9   |  F10  |  HOME  |  END  | PG_DN | PLAY_PAUSE |
 //                     |      |      |      |        |  |  FN2  |       | VOL_DN| VOL_UP |
 
 			bindings = <
