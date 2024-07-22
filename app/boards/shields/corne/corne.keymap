@@ -62,8 +62,21 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <130>;
             hold-while-undecided;
+            flavor = "hold-preferred";
+        };
+
+        hold_tap_ctrl: hold_tap_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_ctrl";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <110>;
+            hold-while-undecided;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <1 2 4 5 17 16 15 14 13 25 26 27 28 29 30 18 6 7 19 31 32 20 8 9 21 34 22 33 10 35 24 36 37 38 39 41 40 14 15 16 26 27 28 36>;
         };
 
         mod_q: mod_q {
@@ -73,7 +86,26 @@
 
             #binding-cells = <0>;
             keep-mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
+            mods = <(MOD_LGUI|MOD_LCTL)>;
+        };
+
+        mo_tapper: mo_tapper {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TAPPER";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <75>;
+        };
+    };
+
+    macros {
+        vim_copy_clipboard: vim_copy_clipboard {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp PLUS &kp Y>;
+            label = "VIM_COPY_CLIPBOARD";
         };
     };
 
@@ -82,40 +114,50 @@
 
         default_layer {
             bindings = <
-&trans                          &mod_q                   &kp W  &kp E          &kp R     &kp T        &kp Y    &kp U  &kp I             &kp O    &kp P     &trans
-&trans                          &kp A                    &kp S  &kp D          &kp F     &kp G        &kp H    &kp J  &kp K             &kp L    &kp SEMI  &trans
-&hold_tap_magic LEFT_SHIFT ESC  &hold_tap_magic LCTRL Z  &kp X  &kp C          &kp V     &kp B        &kp N    &kp M  &kp COMMA         &kp DOT  &kp FSLH  &kp BACKSLASH
-                                                                &mo_2_cmd_alt  &kp LGUI  &kp SPACE    &kp RET  &mo 1  &kp LEFT_COMMAND
+&trans                          &mod_q                  &kp W  &kp E          &kp R     &kp T        &kp Y    &kp U               &kp I                               &kp O    &kp P     &trans
+&trans                          &kp A                   &kp S  &kp D          &kp F     &kp G        &kp H    &kp J               &kp K                               &kp L    &kp SEMI  &trans
+&hold_tap_magic LEFT_SHIFT ESC  &hold_tap_ctrl LCTRL Z  &kp X  &kp C          &kp V     &kp B        &kp N    &kp M               &kp COMMA                           &kp DOT  &kp FSLH  &kp BACKSLASH
+                                                               &mo_2_cmd_alt  &kp LGUI  &kp SPACE    &kp RET  &mo_tapper 1 MINUS  &hold_tap_magic LEFT_COMMAND GRAVE
             >;
         };
 
         fn_layer_1 {
             bindings = <
-&trans  &kp LC(Q)  &kp LC(W)  &trans        &trans    &trans    &kp LC(LCTRL)  &kp MINUS     &kp EQUAL  &kp GRAVE  &kp BACKSPACE  &trans
-&trans  &trans     &trans     &kp LBKT      &kp RBKT  &trans    &kp LEFT       &kp DOWN      &kp UP     &kp RIGHT  &kp DEL        &trans
-&trans  &kp LC(Z)  &trans     &kp CAPSLOCK  &trans    &trans    &kp C_VOL_DN   &kp C_VOL_UP  &kp HOME   &kp END    &trans         &kp C_PP
-                              &kp LALT      &trans    &trans    &mo 3          &trans        &kp LC(M)
+&trans  &kp LC(Q)  &kp LC(W)  &trans    &trans    &trans    &kp LC(CARET)     &kp MINUS          &kp EQUAL  &kp GRAVE  &kp BACKSPACE  &trans
+&trans  &trans     &trans     &kp LBKT  &kp RBKT  &trans    &kp LEFT          &kp DOWN           &kp UP     &kp RIGHT  &kp DEL        &trans
+&trans  &kp LC(Z)  &trans     &trans    &trans    &trans    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME   &kp END    &trans         &kp C_PP
+                              &kp LALT  &trans    &trans    &mo 3             &trans             &kp LC(M)
             >;
         };
 
         fn_layer_2 {
             bindings = <
-&trans          &kp N1      &kp N2      &kp N3        &kp N4        &kp N5        &kp N6  &kp N7  &trans_i  &kp N9  &kp N0   &trans
-&trans          &kp TAB     &trans      &trans        &trans        &trans        &trans  &trans  &trans    &trans  &kp SQT  &trans
-&kp LEFT_SHIFT  &kp LG(N1)  &kp LG(N2)  &trans_alt_c  &trans_alt_v  &kp LG(N5)    &trans  &trans  &trans    &trans  &trans   &trans
-                                        &trans        &trans        &mo 3         &trans  &trans  &trans
+&trans          &kp N1      &kp N2        &kp N3        &kp N4        &kp N5        &kp N6  &kp N7  &trans_i  &kp N9  &kp N0   &trans
+&trans          &kp TAB     &kp C_VOL_DN  &kp C_VOL_UP  &trans        &trans        &trans  &trans  &trans    &trans  &kp SQT  &trans
+&kp LEFT_SHIFT  &kp LG(N1)  &kp LG(N2)    &trans_alt_c  &trans_alt_v  &kp LG(N5)    &trans  &trans  &trans    &trans  &trans   &trans
+                                          &trans        &trans        &mo 3         &trans  &mo 4   &trans
             >;
         };
 
         fn_layer_3 {
             bindings = <
-&trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans   &trans
-&trans      &out OUT_USB  &out OUT_BLE  &trans        &trans        &bt BT_CLR      &trans  &trans  &trans  &trans  &trans   &bootloader
-&sys_reset  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &sys_reset
-                                        &trans        &trans        &trans          &trans  &trans  &trans
+&trans  &kp LG(Q)      &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &kp LA(BACKSPACE)  &trans
+&trans  &out OUT_USB   &out OUT_BLE  &kp CAPSLOCK         &trans        &bt BT_CLR      &trans  &trans  &trans  &trans  &trans             &trans
+&trans  &kp LC(LG(Q))  &kp F2        &vim_copy_clipboard  &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10            &sys_reset
+                                     &trans               &trans        &trans          &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+
+        layer_4 {
+            bindings = <
+&none          &kp LG(Q)  &none  &none  &none  &none    &none  &none  &none  &none  &kp LA(BACKSPACE)  &none
+&none          &none      &none  &none  &none  &none    &none  &none  &none  &none  &none              &none
+&kp LG(LC(Q))  &none      &none  &none  &none  &none    &none  &none  &none  &none  &none              &none
+                                 &none  &none  &none    &none  &none  &none
+            >;
+        };
     };
 };
+
