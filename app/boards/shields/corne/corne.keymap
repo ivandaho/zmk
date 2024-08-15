@@ -141,10 +141,10 @@
 
         fn_layer_3 {
             bindings = <
-&trans  &kp LG(Q)      &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &kp LA(BACKSPACE)  &trans
-&trans  &out OUT_USB   &out OUT_BLE  &kp CAPSLOCK         &trans        &bt BT_CLR      &trans  &trans  &trans  &trans  &trans             &trans
-&trans  &kp LC(LG(Q))  &kp F2        &vim_copy_clipboard  &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10            &sys_reset
-                                     &trans               &trans        &trans          &trans  &trans  &trans
+&trans  &kp LG(Q)     &bt BT_SEL 1  &bt BT_SEL 2         &bt BT_SEL 3  &bt BT_SEL 4     &trans  &trans  &trans  &trans  &kp LA(BACKSPACE)  &trans
+&trans  &out OUT_USB  &out OUT_BLE  &kp CAPSLOCK         &trans        &bt BT_CLR       &trans  &trans  &trans  &trans  &trans             &trans
+&trans  &trans        &kp F2        &vim_copy_clipboard  &kp F4        &kp LC(LG(Q))    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10            &sys_reset
+                                    &trans               &trans        &trans           &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
