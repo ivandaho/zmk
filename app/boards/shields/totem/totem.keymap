@@ -136,10 +136,10 @@
 
         fn_layer_1 {
             bindings = <
-        &kp LC(Q)  &kp LC(W)  &trans    &trans    &trans    &kp LC(CARET)     &kp MINUS          &kp EQUAL  &kp GRAVE  &kp BACKSPACE
-        &trans     &trans     &kp LBKT  &kp RBKT  &trans    &kp LEFT          &kp DOWN           &kp UP     &kp RIGHT  &kp DEL
-&trans  &kp LC(Z)  &trans     &trans    &trans    &trans    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME   &kp END    &trans         &kp C_PP
-                              &kp LALT  &trans    &trans    &mo 3             &trans             &kp LC(M)
+        &kp LC(Q)  &kp LC(W)  &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &kp LC(CARET)     &kp MINUS          &kp EQUAL  &kp GRAVE  &kp BACKSPACE
+        &trans     &trans     &trans    &kp C_VOL_DN          &kp C_VOL_UP            &kp LEFT          &kp DOWN           &kp UP     &kp RIGHT  &kp DEL
+&trans  &kp LC(Z)  &trans     &trans    &kp C_PREVIOUS        &kp C_NEXT              &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME   &kp END    &trans         &kp C_PP
+                              &kp LALT  &trans                &trans                  &mo 3             &trans             &kp LC(M)
             >;
         };
 
@@ -147,10 +147,10 @@
 
         fn_layer_2 {
             bindings = <
-                &kp N1      &kp N2        &kp N3        &kp N4        &kp N5        &kp N6  &kp N7  &trans_i  &kp N9  &kp N0
-                &kp TAB     &kp C_VOL_DN  &kp C_VOL_UP  &trans        &trans        &trans  &trans  &trans    &trans  &kp SQT
-&kp LEFT_SHIFT  &kp LG(N1)  &kp LG(N2)    &trans_alt_c  &trans_alt_v  &kp LG(N5)    &trans  &trans  &trans    &trans  &trans   &trans
-                                          &trans        &trans        &mo 3         &trans  &mo 4   &trans
+                &kp N1      &kp N2      &kp N3        &kp N4        &kp N5        &kp N6  &kp N7  &trans_i  &kp N9  &kp N0
+                &kp TAB     &trans      &trans        &trans        &trans        &trans  &trans  &trans    &trans  &kp SQT
+&kp LEFT_SHIFT  &kp LG(N1)  &kp LG(N2)  &trans_alt_c  &trans_alt_v  &kp LG(N5)    &trans  &trans  &trans    &trans  &trans   &trans
+                                        &trans        &trans        &mo 3         &trans  &mo 4   &trans
             >;
         };
 
