@@ -136,10 +136,10 @@
 
         fn_layer_1 {
             bindings = <
-        &kp LC(Q)  &kp LC(W)  &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &kp LC(CARET)     &kp MINUS          &kp EQUAL  &kp GRAVE  &kp BACKSPACE
-        &trans     &trans     &trans    &kp C_VOL_DN          &kp C_VOL_UP            &kp LEFT          &kp DOWN           &kp UP     &kp RIGHT  &kp DEL
-&trans  &kp LC(Z)  &trans     &trans    &kp C_PREVIOUS        &kp C_NEXT              &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME   &kp END    &trans         &kp C_PP
-                              &kp LALT  &trans                &trans                  &mo 3             &trans             &kp LC(M)
+        &kp LC(Q)  &kp LC(W)  &trans    &trans  &trans    &kp LC(CARET)     &kp MINUS          &kp EQUAL  &kp GRAVE  &kp BACKSPACE
+        &trans     &trans     &trans    &trans  &trans    &kp LEFT          &kp DOWN           &kp UP     &kp RIGHT  &kp DEL
+&trans  &kp LC(Z)  &trans     &trans    &trans  &trans    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME   &kp END    &trans         &kp C_PP
+                              &kp LALT  &trans  &trans    &mo 3             &trans             &kp LC(M)
             >;
         };
 
