@@ -109,7 +109,7 @@
             label = "MO_TAPPER";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <160>;
             quick-tap-ms = <300>;
         };
     };
@@ -139,7 +139,7 @@
                                     &mod_q                  &kp W  &kp E          &kp R     &kp T        &kp Y    &kp U               &kp I                               &kp O    &kp P
                                     &kp A                   &kp S  &kp D          &kp F     &kp G        &kp H    &kp J               &kp K                               &kp L    &kp SEMI
 &hold_tap_shift_esc LEFT_SHIFT ESC  &hold_tap_ctrl LCTRL Z  &kp X  &kp C          &kp V     &kp B        &kp N    &kp M               &kp COMMA                           &kp DOT  &kp FSLH  &kp BACKSLASH
-                                                                   &mo_2_cmd_alt  &kp LGUI  &kp SPACE    &kp RET  &mo_tapper 1 MINUS  &hold_tap_magic LEFT_COMMAND GRAVE
+                                                                   &mo_2_cmd_alt  &kp LGUI  &kp SPACE    &kp RET  &mo_tapper 1 MINUS  &kp GRAVE
             >;
         };
 
